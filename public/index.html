@@ -1,43 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dinko Delic</title>
+    <link rel="icon" type="image/x-icon" href="img/dragon-icon.ico" />
+    <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc="
+      crossorigin="anonymous"
+    />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="reactexample"></div>
+    <header>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+          <li class="nav__item">
+            <a href="#services" class="nav__link">My Technologies</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About me</a>
+          </li>
+          <li class="nav__item">
+            <a href="#work" class="nav__link">My Work</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!--Intrduction-->
+    <section class="intro" id="home">
+      <h1 class="section__title section__title--intro">
+        Hi, I am <strong>Dinko Delic</strong>
+      </h1>
+      <p class="section__subtitle section__subtitle--intro">full-stack dev</p>
+      <img
+        src="img/DinkoZermatt.jpg"
+        alt="Dinko in front of Matterhorn"
+        class="intro__img"
+      />
+    </section>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <!-- My Services-->
+    <section class="my-services" id="services">
+      <h2 class="section__title section__title--services">What I do</h2>
+      <div class="services">
+        <div class="service">
+          <h3>API</h3>
+          <p>
+            Experience in building API's using .NET and C#, connecting
+            database software with ORM's and fetching data with LINQ
+            as well as building ASP.NET MVC.
+          </p>
+        </div>
+
+        <div class="service">
+          <h3>SQL</h3>
+          <p>
+            Proficient with MySQL, SQL Server and PostgreSql, establishing entity
+            relationships, creating and mainting databases and writting SQL
+            queries.
+          </p>
+        </div>
+
+        <div class="service">
+          <h3>Front-end</h3>
+          <p>
+            Building Single Page Applications with Angular 10, fetching data from
+            API, implementing reactive forms and creating a great looking UI
+            with Bootstrap!
+          </p>
+        </div>
+      </div>
+
+      <a href="#work" class="btn">My Work</a>
+    </section>
+
+    <!--About-->
+    <section class="about-me" id="about">
+      <h2 class="section__title section__title--about">Who I am</h2>
+      <p class="section__subtitle section__subtitle--about">
+        Graduate developer in Dublin
+      </p>
+
+      <div class="about-me__body">
+        <p>
+          Recent graduate seeking opportunities to apply and expand my knowledge and skills towards working 
+          in a collaborative environment to develop quality software solutions. I'm a quick learner, passionate about development
+          and always ready to learn new technologies.
+        </p>
+        <p>
+          In my free time I enjoy hiking, playing boardgames with friends and learning new cooking recipes.
+        </p>
+        <p>Available for work immediately!</p>
+        <p>
+          Current books I'm reading:
+          <br />
+          - Cracking the coding interview - by Gayle Laakmann McDowell
+          <br />
+          - Kingkiller Chronicle by Patrick Rothfuss
+        </p>
+      </div>
+
+      <img
+        src="img/DinkoNorwayClose.jpg"
+        alt="Dinko on a pier"
+        class="about-me__img"
+      />
+    </section>
+
+    <!--About-->
+    <section class="my-work" id="work">
+      <h2 class="section__title">My portofolio</h2>
+      <p class="section__subtitle" style="margin-bottom: 1.5em;">Selection of my work</p>
+
+      <div class="portfolio">
+        <a
+          href="http://63.32.117.68:4000"
+          target="_blank"
+          class="portfolio__item"
+        >
+          <img
+            src="img/timeflix_home.png"
+            alt="timeflix home page view"
+            class="portfolio__img"
+          />
+        </a>
+        <a
+          href="https://dinkodelicdatingapp.azurewebsites.net"
+          target="_blank"
+          class="portfolio__item"
+        >
+          <img
+            src="img/DatingAppPic.png"
+            alt="Datting app interface view"
+            class="portfolio__img"
+          />
+        </a>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+      <a href="mailto:dinko.delic7@gmail.com" class="footer__link"
+        >dinko.delic7@gmail.com</a
+      >
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            target="_blank"
+            href="https://www.linkedin.com/in/dinko-delic-3742a8196/"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            target="_blank"
+            href="https://github.com/DinkoDelic?tab=repositories"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            target="_blank"
+            href="https://www.freecodecamp.org/dinkod"
+          >
+            <i class="fab fa-free-code-camp"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
   </body>
 </html>
