@@ -83,7 +83,7 @@ strong { font-weight: var(--fw-bold) }
 h1,
 h2,
 h3 {
-    line-height: 1;
+    line-height: 1 !important;
     margin: 0;
 }
 

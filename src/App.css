@@ -1,3 +1,4 @@
+
 .increase-font-size{
   font-size: 32px !important;
 }
@@ -12,4 +13,8 @@
   left: 0;
   z-index: 1000;
   zoom: 1 !important
+}
+
+.accessibility-btn{
+  display: block;
 }
