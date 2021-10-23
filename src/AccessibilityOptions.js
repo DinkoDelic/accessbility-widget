@@ -1,17 +1,29 @@
 class AccessibilityOptions {
-  static sections = Array.from(document.querySelectorAll('body>section'));
-
-  static changeStyling = (previousValue,value) => {
-    this.sections.map((s) => {
-      s.classList.remove(previousValue);
+  static changeStyling = (previousValue, value, elements) => {
+    this.targetElements(elements).map((e) => {
+      e.classList.remove(previousValue);
       // Appends class unless value is null
-      return !value || s.classList.add(value)
+      return !value || e.classList.add(value);
     });
   };
 
-  static textElements = [...document.querySelectorAll('p, span, h2, h3, h4, h5, h6')];
+  static targetElements = (elements) => {
+    switch (elements) {
+      case 'sections':
+        return [...document.querySelectorAll('body>section')];
+      case 'text':
+        return [...document.querySelectorAll('p, span')];
+      case 'text+header':
+        return [
+          ...document.querySelectorAll('p, span, h1, h2, h3, h4, h5, h6'),
+        ];
+      case 'body':
+        return [...document.getElementsByTagName('body')];
+      case 'body+sections':
+        return [...document.querySelectorAll('body, section, footer')];
+    }
+  };
 
-  
   static changeContrast = (value) => {
     const backgroundElements = [
       ...this.sections,
@@ -38,7 +50,7 @@ class AccessibilityOptions {
           break;
         case 'desaturate':
           // applies desaturation to only body element
-          backgroundElements.at(-1).style.filter= 'saturate(0)';
+          backgroundElements.at(-1).style.filter = 'saturate(0)';
       }
     });
   };

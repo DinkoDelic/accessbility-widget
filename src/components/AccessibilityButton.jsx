@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AccessibilityOptions from '../AccessibilityOptions';
 
 function AccessibilityButton(props) {
   // Share value of undefined turns of all the changes
@@ -15,7 +16,7 @@ function AccessibilityButton(props) {
     }
 
     // Apply styling from an array of options
-    props.onClick(values.at(index-1), values[index]);
+    AccessibilityOptions.changeStyling(values.at(index-1), values[index],props.targetElement);
   }
 
   return (
