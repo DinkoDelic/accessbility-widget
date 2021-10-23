@@ -8,29 +8,34 @@ class App extends React.Component {
     return (
       <div className="button-wrapper">
         <AccessibilityButton
-          onClick={AccessibilityOptions.increaseZoom}
-          options={['1.2','1.4']}
+          onClick={AccessibilityOptions.changeStyling}
+          options={['zoom-120','zoom-130','zoom-150']}
           text="Increase font"
         ></AccessibilityButton>
         <AccessibilityButton
-          onClick={AccessibilityOptions.increaseLineHeight}
-          options={['2','2.5','3']}
+          onClick={AccessibilityOptions.changeStyling}
+          options={['line-height-2','line-height-250','line-height-3']}
           text="Increase line height"
         ></AccessibilityButton>
         <AccessibilityButton
-          onClick={AccessibilityOptions.increaseWordSpacing}
-          options={['2px','4px','6px']}
+          onClick={AccessibilityOptions.changeStyling}
+          options={['word-spacing-2px','word-spacing-4px','word-spacing-8px']}
           text="Increase word spacing"
         ></AccessibilityButton>
           <AccessibilityButton
-          onClick={AccessibilityOptions.changeTextAlign}
-          options={['center','left','right']}
+          onClick={AccessibilityOptions.changeStyling}
+          options={['text-align-center','text-align-left','text-align-right','text-align-justify']}
           text="Change text align"
         ></AccessibilityButton>
          <AccessibilityButton
-          onClick={AccessibilityOptions.changeToDyslexiaFriendlyFont}
-          options={['Arial']}
+          onClick={AccessibilityOptions.changeStyling}
+          options={['dyslexia-font']}
           text="Dyslexia friendly font"
+        ></AccessibilityButton>
+         <AccessibilityButton
+          onClick={AccessibilityOptions.changeStyling}
+          options={['dark-contrast','light-contrast']}
+          text="Change contrast"
         ></AccessibilityButton>
       </div>
     );
