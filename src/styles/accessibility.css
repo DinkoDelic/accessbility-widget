@@ -60,3 +60,14 @@
     background-color: #FFF !important;
     color: #000 !important;
 }
+.desaturate{
+    filter: saturate(0);
+}
+
+
+/* Highlight links */
+.link-highlight{
+    text-decoration: underline;
+    background-color: rgb(255, 251, 0) !important;
+    color: rgb(0, 0, 0) !important;
+}

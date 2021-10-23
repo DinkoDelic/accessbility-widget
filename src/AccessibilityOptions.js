@@ -1,4 +1,5 @@
 class AccessibilityOptions {
+  
   static changeStyling = (previousValue, value, elements) => {
     this.targetElements(elements).map((e) => {
       e.classList.remove(previousValue);
@@ -21,6 +22,8 @@ class AccessibilityOptions {
         return [...document.getElementsByTagName('body')];
       case 'body+sections':
         return [...document.querySelectorAll('body, section, footer')];
+      case 'links':
+        return [...document.querySelectorAll('a')]
     }
   };
 
