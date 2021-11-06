@@ -1,60 +1,43 @@
 import React from 'react';
 import './App.css';
 import AccessibilityButton from './components/AccessibilityButton.jsx';
-import AccessibilityOptions from './AccessibilityOptions';
+import ResetButton from './components/ResetButton';
+import { options } from './data/options.js';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { reset: false };
+
+    this.resetAll=this.resetAll.bind(this);
+  }
+  resetAll(resetChange) {
+    this.setState({reset: resetChange});
+  }
   render() {
+    const optionsArray = [];
+    Object.keys(options).forEach(function (key) {
+      optionsArray.push(options[key]);
+    });
     return (
-      <div className="button-wrapper">
-        <AccessibilityButton
-          onClick={AccessibilityOptions.changeStyling}
-          options={['zoom-120', 'zoom-130', 'zoom-150']}
-          targetElement="sections"
-          text="Increase font"
-        ></AccessibilityButton>
-        <AccessibilityButton
-          onClick={AccessibilityOptions.changeStyling}
-          options={['line-height-2', 'line-height-250', 'line-height-3']}
-          targetElement="text"
-          text="Increase line height"
-        ></AccessibilityButton>
-        <AccessibilityButton
-          onClick={AccessibilityOptions.changeStyling}
-          options={['word-spacing-2px', 'word-spacing-4px', 'word-spacing-8px']}
-          targetElement="text"
-          text="Increase word spacing"
-        ></AccessibilityButton>
-        <AccessibilityButton
-          onClick={AccessibilityOptions.changeStyling}
-          options={[
-            'text-align-center',
-            'text-align-left',
-            'text-align-right',
-            'text-align-justify',
-          ]}
-          targetElement="text"
-          text="Change text align"
-        ></AccessibilityButton>
-        <AccessibilityButton
-          onClick={AccessibilityOptions.changeStyling}
-          options={['dyslexia-font']}
-          targetElement="text+header"
-          text="Dyslexia friendly font"
-        ></AccessibilityButton>
-        <AccessibilityButton
-          onClick={AccessibilityOptions.changeStyling}
-          options={['dark-contrast', 'light-contrast', 'desaturate']}
-          targetElement="sections"
-          text="Change contrast"
-        ></AccessibilityButton>
-        <AccessibilityButton
-          onClick={AccessibilityOptions.changeStyling}
-          options={['link-highlight']}
-          targetElement="links"
-          text="Highlight links"
-        ></AccessibilityButton>
-      </div>
+      <>
+        <div className="button-wrapper">
+          {optionsArray.map((item) => {
+            return (
+              <AccessibilityButton
+                key={item.id}
+                reset={this.state.reset}
+                resetAll={this.resetAll}
+                options={item.options}
+                id={item.id}
+                targetElement={item.targetElement}
+                text={item.text}
+              />
+            );
+          })}
+          <ResetButton reset={this.state.reset} resetAll={this.resetAll} />
+        </div>
+      </>
     );
   }
 }

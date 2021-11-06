@@ -11,3 +11,9 @@ ReactDOM.render(
   document.getElementById('reactexample')
 );
 
+if (module.hot) {
+
+  module.hot.accept();
+  
+  }
+
