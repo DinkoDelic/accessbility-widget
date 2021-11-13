@@ -10,28 +10,30 @@ export default class AccessibilityButton extends React.Component {
       index: JSON.parse(window.localStorage.getItem(props.id)) ?? 0,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.resetAll = this.resetAll.bind(this);
-    AccessibilityOptions.changeStyling(
-      this.state.values.at(this.state.index - 1),
-      this.state.values[this.state.index],
-      this.props.targetElement
-    );
   }
 
-  resetAll() {
-    if (this.props.reset) {
-      this.setState((state) => {
-        AccessibilityOptions.changeStyling(
-          this.state.values.at(state.index),
-          this.state.values[0],
-          this.props.targetElement
-        );
-        window.localStorage.setItem(this.props.id, 0);
-        this.props.resetAll(false);
-        return { index: 0 };
-      })
+  static getDerivedStateFromProps(props, state) {
+    //Checks if reset has been clicked else it applies css classes
+    if (props.reset) {
+      AccessibilityOptions.changeStyling(
+        state.values.at(state.index),
+        state.values[0],
+        props.targetElement
+      );
+      window.localStorage.setItem(props.id, 0);
+      props.resetAll(false);
+      return { index: 0 };
+    }
+    else {
+      AccessibilityOptions.changeStyling(
+        state.values.at(state.index - 1),
+        state.values[state.index],
+        props.targetElement
+      );
+      return null
     }
   }
+
 
   handleChange() {
     // If on last index position, cycle back to start
@@ -64,12 +66,12 @@ export default class AccessibilityButton extends React.Component {
   }
 
   render() {
-    this.resetAll()
+    
     return (
       <>
-      <button className="accessibility-btn btn" onClick={this.handleChange}>
-        {this.props.text}
-      </button>
+        <button className="accessibility-btn" onClick={this.handleChange}>
+          {this.props.text}
+        </button>
       </>
     );
   }
