@@ -12,19 +12,14 @@ export let options = {
     text: 'Increase line height',
   },
   'word-spacing-option': {
-    options: [
-      'null',
-      'word-spacing-2px',
-      'word-spacing-4px',
-      'word-spacing-8px',
-    ],
+    options: [null, 'word-spacing-2px', 'word-spacing-4px', 'word-spacing-8px'],
     id: 'word-spacing',
     targetElement: 'text',
     text: 'Increase word spacing',
   },
   'text-align-option': {
     options: [
-      'null',
+       null,
       'text-align-center',
       'text-align-left',
       'text-align-right',
@@ -41,10 +36,16 @@ export let options = {
     text: 'Dyslexia friendly font',
   },
   'contrast-option': {
-    options: [null, 'dark-contrast', 'light-contrast', 'desaturate'],
+    options: [null, 'dark-contrast', 'light-contrast'],
     id: 'contrast',
-    targetElement: 'sections',
+    targetElement: 'body+sections+text+header',
     text: 'Change contrast',
+  },
+  'desaturate-option': {
+    options: [null,'desaturate'],
+    id: 'desaturate',
+    targetElement: 'sections',
+    text: 'Change desaturation',
   },
   'link-highlight-option': {
     options: [null, 'link-highlight'],
