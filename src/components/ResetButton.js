@@ -6,9 +6,9 @@ function ResetButton(props) {
   }
 
   return (
-    <div>
+    <div className="bg-blue-300 content-center flex mt-2">
       {console.log(props.reset)}
-      <button onClick={() => resetAll()} className="accessibility-btn btn">
+      <button className="m-auto" onClick={() => resetAll()}>
         Reset All
       </button>
     </div>

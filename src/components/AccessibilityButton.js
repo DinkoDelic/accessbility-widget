@@ -1,5 +1,6 @@
 import React from 'react';
 import AccessibilityOptions from '../AccessibilityOptions';
+import Tooltip from './Tooltip';
 
 export default class AccessibilityButton extends React.Component {
   constructor(props) {
@@ -23,17 +24,15 @@ export default class AccessibilityButton extends React.Component {
       window.localStorage.setItem(props.id, 0);
       props.resetAll(false);
       return { index: 0 };
-    }
-    else {
+    } else {
       AccessibilityOptions.changeStyling(
         state.values.at(state.index - 1),
         state.values[state.index],
         props.targetElement
       );
-      return null
+      return null;
     }
   }
-
 
   handleChange() {
     // If on last index position, cycle back to start
@@ -66,12 +65,17 @@ export default class AccessibilityButton extends React.Component {
   }
 
   render() {
-    
     return (
       <>
-        <button className="accessibility-btn" onClick={this.handleChange}>
-          {this.props.text}
-        </button>
+        <div className="bg-blue-300 h-20 w-24 p-1 align-middle group">
+          <button
+            className="w-auto h-3.5 text-sm text-center"
+            onClick={this.handleChange}
+          >
+            {this.props.text}
+          </button>
+         <Tooltip text={this.props.text} />
+        </div>
       </>
     );
   }
