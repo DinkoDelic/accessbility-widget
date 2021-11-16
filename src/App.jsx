@@ -16,7 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div className=" bg-gray-300 z-50 w-100 h-auto fixed top-3 left-6 p-4">
+        <div className=" bg-gray-50 z-50 w-100 h-auto fixed top-3 left-6 p-3 rounded-lg border-solid border-4 border-blue-300">
           <OptionButtons reset={this.state.reset} resetAll={this.resetAll} />
           <ResetButton reset={this.state.reset} resetAll={this.resetAll} />
         </div>

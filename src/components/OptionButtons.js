@@ -7,7 +7,7 @@ const OptionButtons = (props) => {
     optionsArray.push(options[key]);
   });
   return (
-    <div className="grid grid-cols-3 gap-x-4 gap-y-2 text-center ">
+    <div className="grid grid-cols-2 gap-x-2 gap-y-1 text-center">
       {optionsArray.map((item) => {
         return (
           <AccessibilityButton
@@ -18,6 +18,7 @@ const OptionButtons = (props) => {
             id={item.id}
             targetElement={item.targetElement}
             text={item.text}
+            icon={item.icon}
           />
         );
       })}

@@ -1,6 +1,9 @@
 import React from 'react';
 import AccessibilityOptions from '../AccessibilityOptions';
 import Tooltip from './Tooltip';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-regular-svg-icons';
+import OptionLevelIcon from './OptionLevelIcon';
 
 export default class AccessibilityButton extends React.Component {
   constructor(props) {
@@ -67,14 +70,16 @@ export default class AccessibilityButton extends React.Component {
   render() {
     return (
       <>
-        <div className="bg-blue-300 h-20 w-24 p-1 align-middle group">
+        <div className="bg-blue-300 h-28 w-28 p-1 group rounded-md">
           <button
-            className="w-auto h-3.5 text-sm text-center"
+            className="h-14 block text-lg text-center m-auto p-1"
             onClick={this.handleChange}
           >
-            {this.props.text}
+            <FontAwesomeIcon icon={this.props.icon} size="2x" />
+            <span className="block text-center text-sm align-middle m-1">{this.props.id}</span>
           </button>
-         <Tooltip text={this.props.text} />
+          <OptionLevelIcon level={this.state.index}/>
+          <Tooltip text={this.props.text} />
         </div>
       </>
     );
