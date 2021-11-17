@@ -58,13 +58,6 @@ export default class AccessibilityButton extends React.Component {
           window.localStorage.setItem(this.props.id, this.state.index + 1);
           return { index: state.index + 1 };
         });
-
-    // Apply styling from an array of options, parameters:(previous value, current value, target html element)
-    // AccessibilityOptions.changeStyling(
-    //   this.state.values.at(this.state.index - 1),
-    //   this.state.values[this.state.index],
-    //   this.props.targetElement
-    // );
   }
 
   render() {
