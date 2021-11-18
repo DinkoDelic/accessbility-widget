@@ -55,7 +55,7 @@ img {
     max-width: 100%;
 }
 
-strong { font-weight: var(--fw-bold) }
+strong { font-weight: var(--fw-bold) !important}
 
 
 /* Buttons */
@@ -87,9 +87,9 @@ h3 {
     margin: 0;
 }
 
-h1 { font-size: var(--fs-h1) }
-h2 { font-size: var(--fs-h2) }
-h3 { font-size: var(--fs-h3) }
+h1 { font-size: var(--fs-h1) !important}
+h2 { font-size: var(--fs-h2) !important}
+h3 { font-size: var(--fs-h3) !important}
 
 
 .section__title {

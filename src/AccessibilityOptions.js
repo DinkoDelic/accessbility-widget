@@ -12,7 +12,9 @@ class AccessibilityOptions {
       case 'sections':
         return [...document.querySelectorAll('body>section')];
       case 'text':
-        return [...document.querySelectorAll('p, span')];
+        return [
+          ...document.querySelectorAll('p:not(#reactexample p), span:not(#reactexample span)'),
+        ];
       case 'text+header':
         return [
           ...document.querySelectorAll(
@@ -23,20 +25,21 @@ class AccessibilityOptions {
           ),
         ];
       case 'body':
-        return [...document.getElementsByTagName('body')];
+        return [...document.getElementsByTagName('body:not(#reactexample)')];
       case 'body+sections':
-        return [...document.querySelectorAll('body, section, footer')];
+        return [
+          ...document.querySelectorAll(
+            'body, section, footer'
+          ),
+        ];
       case 'body+sections+text+header':
         return [
           ...document.querySelectorAll(
-            'body, main, section, footer, p, span, h1, h2, h3, h4, h5, h6',
-            'li',
-            'div',
-            'ul'
+            'body:not(#reactexample div button), main, section, footer, p:not(#reactexample div button p), span, h1, h2, h3, h4, h5, h6,li,div:not(#reactexample div),ul'
           ),
         ];
       case 'links':
-        return [...document.querySelectorAll('a')];
+        return [...document.querySelectorAll('a:not(#reactexample)')];
       default:
         return;
     }

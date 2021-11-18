@@ -7,7 +7,7 @@ const OptionLevelIcon = (props) => {
         stars.push(<FontAwesomeIcon className="m-auto" icon={faStar} size="xs" key={i}/>)
     }
   return (
-    <div className="h-10 px-4 mt-2 align-middle flex">
+    <div className="h-5 px-4 mt-3 align-middle flex">
         {stars}
     </div>
   );

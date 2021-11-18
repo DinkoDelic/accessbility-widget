@@ -63,13 +63,13 @@ export default class AccessibilityButton extends React.Component {
   render() {
     return (
       <>
-        <div className="bg-blue-300 h-28 w-28 p-1 group rounded-md">
+        <div className="bg-blue-300 h-24 w-28 p-1 group rounded-md">
           <button
             className="h-14 block text-lg text-center m-auto p-1"
             onClick={this.handleChange}
           >
             <FontAwesomeIcon icon={this.props.icon} size="2x" />
-            <span className="block text-center text-sm align-middle m-1">{this.props.id}</span>
+            <p id="option-desc" className="block bg-blue-300 text-center text-sm align-middle m-1">{this.props.id}</p>
           </button>
           <OptionLevelIcon level={this.state.index}/>
           <Tooltip text={this.props.text} />
