@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faTimes} from '@fortawesome/free-solid-svg-icons'
+import {faTimesCircle} from '@fortawesome/free-regular-svg-icons'
 
 function ResetButton(props) {
   function ResetAll() {
@@ -8,9 +8,9 @@ function ResetButton(props) {
   }
 
   return (
-    <div className="bg-blue-300 content-center flex mt-2 rounded-md">
-      <button className="m-auto h-full w-full" onClick={() => ResetAll()}>
-        Reset All <FontAwesomeIcon icon={faTimes} size='1x' />
+    <div className="bg-blue-200 text-blue-900 content-center flex m-3 rounded-3xl transition-all duration-300 hover:ring-2 hover:rounded-lg hover:bg-white hover:text-blue-900">
+      <button className="m-auto h-full w-full text-md font-bold" onClick={() => ResetAll()}>
+        Reset All <FontAwesomeIcon icon={faTimesCircle} size='sm' />
       </button>
     </div>
   );

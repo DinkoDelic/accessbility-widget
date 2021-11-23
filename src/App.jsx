@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Footer from './components/Footer';
 import OptionsList from './components/OptionsList';
 import ResetButton from './components/ResetButton.js';
 import StartButton from './components/StartButton';
@@ -29,7 +30,7 @@ class App extends React.Component {
 
         <div
           className={
-            ' bg-gray-50 w-100 h-auto fixed top-16 left-16 p-3 rounded-3xl border-solid border-4 border-blue-300 z-20 font-flipdish ' +
+            ' bg-gray-50 w-100 h-auto fixed top-16 left-16  pb-0 rounded-3xl border-solid border-4 border-blue-300 z-20 font-flipdish ' +
             (this.state.toggleMenu
               ? 'transform-gpu scale-x-100 opacity-100  transition ease-out duration-500 '
               : 'transform-gpu -translate-x-96 transition ease-in duration-500')
@@ -37,7 +38,9 @@ class App extends React.Component {
         >
           <OptionsList reset={this.state.reset} ResetAll={this.ResetAll} />
           <ResetButton reset={this.state.reset} ResetAll={this.ResetAll} />
+          <Footer/>
         </div>
+        
       </>
     );
   }

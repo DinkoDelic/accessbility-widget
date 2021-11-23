@@ -11,8 +11,10 @@ export default class AccessibilityButton extends React.Component {
     this.state = {
       values: [...props.options],
       index: JSON.parse(window.localStorage.getItem(props.id)) ?? 0,
+      showTooltip: false
     };
     this.handleChange = this.handleChange.bind(this);
+    this.ToggleTooltip = this.ToggleTooltip.bind(this);
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -59,20 +61,24 @@ export default class AccessibilityButton extends React.Component {
         });
   }
 
+  ToggleTooltip() {
+    return this.state.showTooltip ? this.setState({showTooltip:false}) : this.setState({showTooltip:true})
+  }
+
   render() {
     return (
       <>
-        <div className={"bg-blue-300 text-gray-700 ring-blue-300 h-20 w-28 p-1 group rounded-3xl transition-all duration-300 hover:ring-2 hover:rounded-lg hover:bg-white hover:text-blue-500"}>
+        <div onMouseEnter={this.ToggleTooltip} onMouseLeave={this.ToggleTooltip} className={"bg-blue-200 text-blue-900 ring-blue-300 h-22 w-28 p-1 rounded-3xl transition-all duration-300 hover:ring-2 hover:rounded-lg hover:bg-white hover:text-blue-900"}>
           <button
             className="h-14 block text-lg text-center m-auto p-1"
             onClick={this.handleChange}
           >
             <FontAwesomeIcon icon={this.props.icon} size="lg" />
-            <p id="option-desc" className={"block  text-center text-sm align-middle my-1"}>{this.props.id}</p>
+            <p id="option-desc" className={"block  text-center text-sm align-middle my-1 font-semibold"}>{this.props.id}</p>
           </button>
           <OptionLevel level={this.state.index}/>
-          <Tooltip text={this.props.text} />
         </div>
+        <Tooltip text={this.props.text} optionsDescription={this.props.optionsDescription} level={this.state.index} showTooltip={this.state.showTooltip} />
       </>
     );
   }

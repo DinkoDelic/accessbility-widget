@@ -3,3 +3,9 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+
+@layer utilities {
+    .h-22{
+        height: 85px;
+    }
+  }

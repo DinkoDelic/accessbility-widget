@@ -1,7 +1,19 @@
 function Tooltip(props) {
   return (
-    <div className="p-1 origin-left transform-gpu cursor-default scale-x-0 transition ease-in duration-200 relative left-24 bottom-16   group-hover:scale-x-100 bg-gray-800 text-white text-sm rounded-md">
-      {props.text}
+    <div
+      className={`${
+        props.showTooltip && 'scale-x-100'
+      }  mx-2 font-semibold w-32 border-2 border-blue-300 h-auto origin-left transform-gpu scale-x-0 left-64 transition ease-in duration-200 absolute bg-blue-300 text-gray-700 text-base rounded-lg`}
+    >
+      <div className={"pt-1 px-1"}>{props.text}</div>
+
+      <div
+        className={
+          'mt-1 px-1 w-full h-auto  rounded-b-md text-md capitalize animate-slide-left bg-gray-100'
+        }
+      >
+        {props.optionsDescription[props.level]}
+      </div>
     </div>
   );
 }
