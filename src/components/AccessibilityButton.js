@@ -2,8 +2,7 @@ import React from 'react';
 import AccessibilityOptions from '../AccessibilityOptions';
 import Tooltip from './Tooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
-import OptionLevelIcon from './OptionLevelIcon';
+import OptionLevel from './OptionLevel';
 
 export default class AccessibilityButton extends React.Component {
   constructor(props) {
@@ -25,7 +24,7 @@ export default class AccessibilityButton extends React.Component {
         props.targetElement
       );
       window.localStorage.setItem(props.id, 0);
-      props.resetAll(false);
+      props.ResetAll(false);
       return { index: 0 };
     } else {
       AccessibilityOptions.changeStyling(
@@ -63,15 +62,15 @@ export default class AccessibilityButton extends React.Component {
   render() {
     return (
       <>
-        <div className="bg-blue-300 h-24 w-28 p-1 group rounded-md">
+        <div className={"bg-blue-300 text-gray-700 ring-blue-300 h-20 w-28 p-1 group rounded-3xl transition-all duration-300 hover:ring-2 hover:rounded-lg hover:bg-white hover:text-blue-500"}>
           <button
             className="h-14 block text-lg text-center m-auto p-1"
             onClick={this.handleChange}
           >
-            <FontAwesomeIcon icon={this.props.icon} size="2x" />
-            <p id="option-desc" className="block bg-blue-300 text-center text-sm align-middle m-1">{this.props.id}</p>
+            <FontAwesomeIcon icon={this.props.icon} size="lg" />
+            <p id="option-desc" className={"block  text-center text-sm align-middle my-1"}>{this.props.id}</p>
           </button>
-          <OptionLevelIcon level={this.state.index}/>
+          <OptionLevel level={this.state.index}/>
           <Tooltip text={this.props.text} />
         </div>
       </>

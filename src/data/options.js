@@ -1,24 +1,23 @@
-import { icon } from '@fortawesome/fontawesome-svg-core';
 import {faAdjust,faSearchPlus,faArrowsAltH,faTextHeight, faAlignCenter,faFont,faSun, faHighlighter} from '@fortawesome/free-solid-svg-icons'
 
 export let options = {
   'zoom-option': {
     options: [null, 'zoom-120', 'zoom-130', 'zoom-150'],
-    id: 'zoom',
+    id: 'Zoom',
     targetElement: 'sections',
     text: 'Increase font',
     icon:faSearchPlus
   },
   'line-height-option': {
     options: [null, 'line-height-2', 'line-height-250', 'line-height-3'],
-    id: 'line-height',
+    id: 'Line height',
     targetElement: 'text',
     text: 'Increase line height',
     icon:faTextHeight
   },
   'word-spacing-option': {
     options: [null, 'word-spacing-2px', 'word-spacing-4px', 'word-spacing-8px'],
-    id: 'word-spacing',
+    id: 'Word spacing',
     targetElement: 'text',
     text: 'Increase word spacing',
     icon:faArrowsAltH
@@ -31,35 +30,35 @@ export let options = {
       'text-align-right',
       'text-align-justify',
     ],
-    id: 'text-align',
+    id: 'Text align',
     targetElement: 'text',
     text: 'Change text align',
     icon:faAlignCenter
   },
   'dyslexia-font-option': {
     options: [null, 'dyslexia-font'],
-    id: 'dyslexia-font',
+    id: 'Dyslexia font',
     targetElement: 'text+header',
     text: 'Dyslexia friendly font',
     icon:faFont
   },
   'contrast-option': {
     options: [null, 'dark-contrast', 'light-contrast'],
-    id: 'contrast',
+    id: 'Contrast',
     targetElement: 'body+sections+text+header',
     text: 'Change contrast',
     icon:faAdjust
   },
   'desaturate-option': {
     options: [null,'desaturate'],
-    id: 'desaturate',
+    id: 'Desaturate',
     targetElement: 'sections',
     text: 'Change desaturation',
     icon:faSun
   },
   'link-highlight-option': {
     options: [null, 'link-highlight'],
-    id: 'link-highlight',
+    id: 'Link highlight',
     targetElement: 'links',
     text: 'Highlight links',
     icon:faHighlighter
