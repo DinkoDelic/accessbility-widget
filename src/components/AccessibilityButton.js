@@ -68,13 +68,13 @@ export default class AccessibilityButton extends React.Component {
   render() {
     return (
       <>
-        <div onMouseEnter={this.ToggleTooltip} onMouseLeave={this.ToggleTooltip} className={"bg-blue-200 text-blue-900 ring-blue-300 h-auto w-40 md:w-28  p-1 rounded-3xl transition-all duration-300 hover:ring-2 hover:rounded-lg hover:bg-white hover:text-blue-900"}>
+        <div onMouseEnter={this.ToggleTooltip} onMouseLeave={this.ToggleTooltip} className={"bg-blue-200 text-blue-900 ring-blue-300 h-auto md:h-24 w-40 md:w-32  p-1 rounded-3xl transition-all duration-300 hover:ring-2 hover:rounded-lg hover:bg-white hover:text-blue-900"}>
           <button
-            className={" grid grid-cols-3 h-10 w-full md:h-auto md:grid-cols-1 text-lg text-center m-auto p-1"}
+            className={" grid grid-cols-3 h-10 w-full md:h-auto md:grid-cols-1 text-center m-auto p-1"}
             onClick={this.handleChange}
           >
-            <FontAwesomeIcon className={"text-lg md:text-2xl  m-auto"} icon={this.props.icon} />
-            <p id="option-desc" className={"h-auto w-10 md:h-auto md:w-auto   text-xs align-middle my-auto  md:my-1 font-semibold"}>{this.props.id}</p>
+            <FontAwesomeIcon className={"text-lg md:text-3xl  m-auto"} icon={this.props.icon} />
+            <p id="option-desc" className={"h-auto w-10 md:h-auto md:w-auto   text-xs md:text-base align-middle my-auto  md:my-1 font-semibold"}>{this.props.id}</p>
             <OptionLevel level={this.state.index}/>
           </button>
         </div>

@@ -36,7 +36,7 @@ class App extends React.Component {
 
         <div
           className={
-            ` bg-gray-50 w-100 h-auto fixed ${this.state.position}-24 left-0 md:left-10  pb-0 rounded-3xl  border-solid border-4 border-blue-300 z-1002 font-flipdish  ` +
+            ` bg-gray-50 w-100 h-auto fixed ${this.state.position}-16 md:${this.state.position}-24 left-0 md:left-10  pb-0 rounded-3xl  border-solid border-4 border-blue-300 z-1002 font-flipdish  ` +
             (this.state.toggleMenu
               ? 'transform-gpu scale-x-100 opacity-100  transition ease-out duration-500 '
               : 'transform-gpu -translate-x-96 transition ease-in duration-500')

@@ -16,7 +16,7 @@ const StartButton = (props) => {
         setEffect(false);
       }}
       className={`${effect && 'animate-spin-once'} 
-        fixed ${props.position}-4 left-3 p-0 z-1003 flex`}
+        fixed ${props.position}-2 left-3 p-0 z-1003 flex`}
     >
       <FontAwesomeIcon
         className={
