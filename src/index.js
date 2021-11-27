@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('reactexample')
+  document.getElementById('flipdish-accessibility-widget')
 );
 
 if (module.hot) {

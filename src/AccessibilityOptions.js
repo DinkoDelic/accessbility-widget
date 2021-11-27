@@ -13,7 +13,7 @@ class AccessibilityOptions {
         return [...document.querySelectorAll('body>section')];
       case 'text':
         return [
-          ...document.querySelectorAll('p:not(#reactexample p), span:not(#reactexample span)'),
+          ...document.querySelectorAll('p:not(#flipdish-accessibility-widget p), span:not(#flipdish-accessibility-widget span)'),
         ];
       case 'text+header':
         return [
@@ -25,7 +25,7 @@ class AccessibilityOptions {
           ),
         ];
       case 'body':
-        return [...document.getElementsByTagName('body:not(#reactexample)')];
+        return [...document.getElementsByTagName('body:not(#flipdish-accessibility-widget)')];
       case 'body+sections':
         return [
           ...document.querySelectorAll(
@@ -35,11 +35,11 @@ class AccessibilityOptions {
       case 'body+sections+text+header':
         return [
           ...document.querySelectorAll(
-            'body:not(#reactexample div button), main, section, footer, p:not(#reactexample div button p), span, h1, h2, h3, h4, h5, h6,li,div:not(#reactexample div),ul'
+            'body:not(#flipdish-accessibility-widget div button), main, section, footer, p:not(#flipdish-accessibility-widget div button p), span, h1, h2, h3, h4, h5, h6,li,div:not(#flipdish-accessibility-widget div),ul'
           ),
         ];
       case 'links':
-        return [...document.querySelectorAll('a:not(#reactexample)')];
+        return [...document.querySelectorAll('a:not(#flipdish-accessibility-widget)')];
       default:
         return;
     }

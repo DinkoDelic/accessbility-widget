@@ -8,11 +8,16 @@ import StartButton from './components/StartButton';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { reset: false, toggleMenu: false };
+    this.state = {
+      reset: false,
+      toggleMenu: false,
+      position: document.getElementById('flipdish-accessibility-widget').dataset.position ?? 'top'
+    };
 
     this.ResetAll = this.ResetAll.bind(this);
     this.ToggleMenu = this.ToggleMenu.bind(this);
   }
+
   ResetAll(resetChange) {
     this.setState({ reset: resetChange });
   }
@@ -26,11 +31,12 @@ class App extends React.Component {
         <StartButton
           toggle={this.state.toggleMenu}
           ToggleMenu={this.ToggleMenu}
+          position={this.state.position}
         />
 
         <div
           className={
-            ' bg-gray-50 w-100 h-auto fixed top-16 left-16  pb-0 rounded-3xl border-solid border-4 border-blue-300 z-20 font-flipdish ' +
+            ` bg-gray-50 w-100 h-auto fixed ${this.state.position}-24 left-0 md:left-10  pb-0 rounded-3xl  border-solid border-4 border-blue-300 z-1002 font-flipdish  ` +
             (this.state.toggleMenu
               ? 'transform-gpu scale-x-100 opacity-100  transition ease-out duration-500 '
               : 'transform-gpu -translate-x-96 transition ease-in duration-500')
@@ -38,9 +44,8 @@ class App extends React.Component {
         >
           <OptionsList reset={this.state.reset} ResetAll={this.ResetAll} />
           <ResetButton reset={this.state.reset} ResetAll={this.ResetAll} />
-          <Footer/>
+          <Footer />
         </div>
-        
       </>
     );
   }

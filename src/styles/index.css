@@ -4,8 +4,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
 
+html{
+    font-size: 16px !important;
+}
+
 @layer utilities {
     .h-22{
-        height: 85px;
+        height: 85px !important;
+    }
+    .z-1002{
+        z-index: 1002 !important;
+    }
+    .z-1003{
+        z-index: 1003 !important;
     }
   }

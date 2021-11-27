@@ -1,13 +1,13 @@
 import { options } from '../data/options.js';
 import AccessibilityButton from './AccessibilityButton.js';
 
-const OptionButtons = (props) => {
+const OptionsList = (props) => {
   const optionsArray = [];
   Object.keys(options).forEach(function (key) {
     optionsArray.push(options[key]);
   });
   return (
-    <div className="grid grid-cols-2 gap-x-2 gap-y-2 text-center m-3">
+    <div className={"grid grid-cols-1 md:grid-cols-2  gap-x-2 gap-y-2 text-center m-3"}>
       {optionsArray.map((item) => {
         return (
           <AccessibilityButton
@@ -27,4 +27,4 @@ const OptionButtons = (props) => {
   );
 };
 
-export default OptionButtons;
+export default OptionsList;
