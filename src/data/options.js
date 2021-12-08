@@ -48,7 +48,7 @@ export let options = {
     icon:faFont
   },
   'contrast-option': {
-    options: [null, 'dark-contrast', 'light-contrast'],
+    options: ['no-contrast', 'dark-contrast', 'light-contrast'],
     optionsDescription:[null,'dark contrast','light contrast'],
     id: 'Contrast',
     targetElement: 'body+sections+text+header',

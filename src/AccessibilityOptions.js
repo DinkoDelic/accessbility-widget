@@ -1,10 +1,33 @@
+import { darkContrast, lightContrast } from './contrastStyles/darkContrast.js';
+
 class AccessibilityOptions {
   static changeStyling = (previousValue, value, elements) => {
-    this.targetElements(elements).map((e) => {
-      e.classList.remove(previousValue);
-      // Appends class unless value is null
-      return !value || e.classList.add(value);
-    });
+    const contrastStyle = document.createElement('style');
+    contrastStyle.id = 'contrast-style';
+    if (!document.querySelector('#contrast-style'))
+      document.documentElement.appendChild(contrastStyle);
+    switch (value) {
+      case 'dark-contrast':
+        console.log('dark');
+        document.querySelector('#contrast-style').innerHTML = `${darkContrast}`;
+        break;
+      case 'light-contrast':
+        console.log('light');
+        document.querySelector(
+          '#contrast-style'
+        ).innerHTML = `${lightContrast}`;
+        break;
+      case 'no-contrast':
+        document.querySelector('#contrast-style').innerHTML = ``;
+        break;
+      default:
+        this.targetElements(elements).map((e) => {
+          e.classList.remove(previousValue);
+          // Appends class unless value is null
+          return !value || e.classList.add(value);
+        });
+        break;
+    }
   };
 
   static targetElements = (elements) => {
@@ -13,7 +36,9 @@ class AccessibilityOptions {
         return [...document.querySelectorAll('body>section')];
       case 'text':
         return [
-          ...document.querySelectorAll('p:not(#flipdish-accessibility-widget p), span:not(#flipdish-accessibility-widget span)'),
+          ...document.querySelectorAll(
+            'p:not(#flipdish-accessibility-widget p), span:not(#flipdish-accessibility-widget span)'
+          ),
         ];
       case 'text+header':
         return [
@@ -25,13 +50,13 @@ class AccessibilityOptions {
           ),
         ];
       case 'body':
-        return [...document.getElementsByTagName('body:not(#flipdish-accessibility-widget)')];
-      case 'body+sections':
         return [
-          ...document.querySelectorAll(
-            'body, section, footer'
+          ...document.getElementsByTagName(
+            'body:not(#flipdish-accessibility-widget)'
           ),
         ];
+      case 'body+sections':
+        return [...document.querySelectorAll('body, section, footer')];
       case 'body+sections+text+header':
         return [
           ...document.querySelectorAll(
@@ -39,7 +64,9 @@ class AccessibilityOptions {
           ),
         ];
       case 'links':
-        return [...document.querySelectorAll('a:not(#flipdish-accessibility-widget)')];
+        return [
+          ...document.querySelectorAll('a:not(#flipdish-accessibility-widget)'),
+        ];
       default:
         return;
     }
