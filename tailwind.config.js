@@ -17,6 +17,10 @@ module.exports = {
         'spin-once': 'spin 0.6s ease-in-out 0s 1 alternate',
         'slide-left': 'slideLeft 0.6s ease-in-out 0s 1'
       },
+      spacing: {
+        '284': '284px',
+        '528': '528px',
+      }
     },
   },
   variants: {
