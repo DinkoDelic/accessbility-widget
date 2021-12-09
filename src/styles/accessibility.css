@@ -1,12 +1,12 @@
 /* Zoom options */
 .zoom-120{
-    zoom: 1.2 !important;
+    transform: scale(1.2) !important;
 }
 .zoom-130{
-    zoom: 1.3 !important;
+    transform: scale(1.3) !important;
 }
 .zoom-150{
-    zoom: 1.5 !important;
+    transform: scale(1.4) !important;
 }
 
 /* Line height options */

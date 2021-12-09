@@ -3,7 +3,7 @@ import {faAdjust,faSearchPlus,faArrowsAltH,faTextHeight, faAlignCenter,faFont,fa
 export let options = {
   'zoom-option': {
     options: [null, 'zoom-120', 'zoom-130', 'zoom-150'],
-    optionsDescription:[null,'1.2X','1.3X','1.5X'],
+    optionsDescription:[null,'1.2X','1.3X','1.4X'],
     id: 'Zoom',
     targetElement: 'sections',
     text: 'Increase font',
@@ -13,7 +13,7 @@ export let options = {
     options: [null, 'line-height-2', 'line-height-250', 'line-height-3'],
     optionsDescription:[null,'small','medium','large'],
     id: 'Line height',
-    targetElement: 'text',
+    targetElement: 'text+li',
     text: 'Increase line height',
     icon:faTextHeight
   },
@@ -21,7 +21,7 @@ export let options = {
     options: [null, 'word-spacing-2px', 'word-spacing-4px', 'word-spacing-8px'],
     optionsDescription:[null,'small','medium','large'],
     id: 'Word spacing',
-    targetElement: 'text',
+    targetElement: 'text+li',
     text: 'Increase word spacing',
     icon:faArrowsAltH
   },
@@ -31,9 +31,8 @@ export let options = {
       'text-align-center',
       'text-align-left',
       'text-align-right',
-      'text-align-justify',
     ],
-    optionsDescription:[null,'center','left','right','justify'],
+    optionsDescription:[null,'center','left','right'],
     id: 'Text align',
     targetElement: 'text',
     text: 'Change text align',

@@ -1,4 +1,4 @@
-import { darkContrast, lightContrast } from './contrastStyles/darkContrast.js';
+import { darkContrast, lightContrast } from './contrastStyles/contrastOptions.js';
 
 class AccessibilityOptions {
   static changeStyling = (previousValue, value, elements) => {
@@ -37,7 +37,13 @@ class AccessibilityOptions {
       case 'text':
         return [
           ...document.querySelectorAll(
-            'p:not(#flipdish-accessibility-widget p), span:not(#flipdish-accessibility-widget span)'
+            '.text'
+          ),
+        ];
+      case 'text+li':
+        return [
+          ...document.querySelectorAll(
+            'p:not(#flipdish-accessibility-widget p), span:not(#flipdish-accessibility-widget span),li'
           ),
         ];
       case 'text+header':
