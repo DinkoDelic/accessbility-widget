@@ -73,6 +73,8 @@ class AccessibilityOptions {
         return [
           ...document.querySelectorAll('a:not(#flipdish-accessibility-widget)'),
         ];
+      case 'zoom':
+        return [...document.querySelectorAll('.container:not(#header .container)')]
       default:
         return;
     }
