@@ -34,7 +34,7 @@ export let options = {
     ],
     optionsDescription:[null,'center','left','right'],
     id: 'Text align',
-    targetElement: 'text',
+    targetElement: 'text+li',
     text: 'Change text align',
     icon:faAlignCenter
   },

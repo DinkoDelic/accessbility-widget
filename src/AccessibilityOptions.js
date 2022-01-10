@@ -2,32 +2,15 @@ import { darkContrast, lightContrast } from './contrastStyles/contrastOptions.js
 
 class AccessibilityOptions {
   static changeStyling = (previousValue, value, elements) => {
-    const contrastStyle = document.createElement('style');
-    contrastStyle.id = 'contrast-style';
-    if (!document.querySelector('#contrast-style'))
-      document.documentElement.appendChild(contrastStyle);
-    switch (value) {
-      case 'dark-contrast':
-        console.log('dark');
-        document.querySelector('#contrast-style').innerHTML = `${darkContrast}`;
-        break;
-      case 'light-contrast':
-        console.log('light');
-        document.querySelector(
-          '#contrast-style'
-        ).innerHTML = `${lightContrast}`;
-        break;
-      case 'no-contrast':
-        document.querySelector('#contrast-style').innerHTML = ``;
-        break;
-      default:
+  
+   
         this.targetElements(elements).map((e) => {
           e.classList.remove(previousValue);
           // Appends class unless value is null
           return !value || e.classList.add(value);
         });
-        break;
-    }
+   
+    
   };
 
   static targetElements = (elements) => {
